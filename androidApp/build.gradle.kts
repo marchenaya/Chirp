@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
@@ -15,18 +15,18 @@ dependencies {
 
     implementation(libs.androidx.activity.compose)
 
-    implementation(libs.compose.uiToolingPreview)
-    debugImplementation(libs.compose.uiTooling)
+    implementation(libs.jetbrains.compose.ui.tooling.preview)
+    debugImplementation(libs.jetbrains.compose.ui)
 }
 
 android {
     namespace = "com.marchenaya.chirp"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    compileSdk = libs.versions.projectCompileSdkVersion.get().toInt()
 
     defaultConfig {
         applicationId = "com.marchenaya.chirp"
-        minSdk = libs.versions.android.minSdk.get().toInt()
-        targetSdk = libs.versions.android.targetSdk.get().toInt()
+        minSdk = libs.versions.projectMinSdkVersion.get().toInt()
+        targetSdk = libs.versions.projectTargetSdkVersion.get().toInt()
         versionCode = 1
         versionName = "1.0"
     }

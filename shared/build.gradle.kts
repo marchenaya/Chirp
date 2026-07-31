@@ -18,8 +18,6 @@ kotlin {
         }
     }
     
-    jvm()
-    
     android {
        namespace = "com.marchenaya.chirp.shared"
         compileSdk = libs.versions.projectCompileSdkVersion.get().toInt()

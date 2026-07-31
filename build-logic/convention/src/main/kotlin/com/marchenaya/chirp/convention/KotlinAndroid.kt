@@ -11,7 +11,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 private const val VERSION_COMPILE_SDK = "projectCompileSdkVersion"
 private const val VERSION_MIN_SDK = "projectMinSdkVersion"
 private const val LIBRARY_DESUGAR_JDK_LIBS = "android-desugarJdkLibs"
-private const val CONFIGURATION_CORE_LIBRARY_DESUGARING = "coreLibraryDesugaring"
 private const val OPT_IN_EXPERIMENTAL_COROUTINES =
     "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
 
@@ -32,7 +31,7 @@ internal fun Project.configureKotlinAndroid(
         configureKotlin()
 
         dependencies {
-            CONFIGURATION_CORE_LIBRARY_DESUGARING(libs.findLibrary(LIBRARY_DESUGAR_JDK_LIBS).get())
+            CORE_LIBRARY_DESUGARING(libs.findLibrary(LIBRARY_DESUGAR_JDK_LIBS).get())
         }
     }
 }

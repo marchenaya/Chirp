@@ -5,6 +5,6 @@ import org.gradle.kotlin.dsl.dependencies
 
 internal fun Project.configureAndroidLibraryTarget() {
     dependencies {
-        "coreLibraryDesugaring"(libs.findLibrary("android-desugarJdkLibs").get())
+        CORE_LIBRARY_DESUGARING(libs.findLibrary(LIBRARY_DESUGAR_JDK_LIBS).get())
     }
 }

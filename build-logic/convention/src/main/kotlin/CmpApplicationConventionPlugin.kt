@@ -21,7 +21,7 @@ class CmpApplicationConventionPlugin : Plugin<Project> {
             configureIosTargets()
 
             dependencies {
-                "androidMainImplementation"(libs.findLibrary("androidx-compose-ui-tooling").get())
+                "androidMainImplementation"(libs.findLibrary("jetbrains-compose-ui-tooling").get())
             }
         }
     }

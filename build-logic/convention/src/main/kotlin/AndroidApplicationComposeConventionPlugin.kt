@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
+import com.marchenaya.chirp.convention.COMPOSE_COMPILER_PLUGIN_ID
 import com.marchenaya.chirp.convention.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -21,7 +22,6 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
     private companion object {
         const val ANDROID_APPLICATION_CONVENTION_PLUGIN_ID =
             "com.marchenaya.convention.android.application"
-        const val COMPOSE_COMPILER_PLUGIN_ID = "org.jetbrains.kotlin.plugin.compose"
     }
 
 }

@@ -5,6 +5,11 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
+private const val KMP_ANDROID_RESOURCES_PROPERTY = "android.experimental.kmp.enableAndroidResources"
+private const val EXPECT_ACTUAL_CLASSES = "-Xexpect-actual-classes"
+private const val OPT_IN_REQUIRES_OPT_IN = "-opt-in=kotlin.RequiresOptIn"
+private const val OPT_IN_EXPERIMENTAL_TIME = "-opt-in=kotlin.time.ExperimentalTime"
+
 internal fun Project.configureKotlinMultiplatform() {
     configureAndroidLibraryTarget()
 
@@ -14,7 +19,7 @@ internal fun Project.configureKotlinMultiplatform() {
             compileSdk = libs.findVersion(VERSION_COMPILE_SDK).get().toString().toInt()
             minSdk = libs.findVersion(VERSION_MIN_SDK).get().toString().toInt()
             namespace = pathToPackageName()
-            experimentalProperties["android.experimental.kmp.enableAndroidResources"] = true
+            experimentalProperties[KMP_ANDROID_RESOURCES_PROPERTY] = true
         }
 
         listOf(
@@ -28,9 +33,9 @@ internal fun Project.configureKotlinMultiplatform() {
         }
 
         compilerOptions {
-            freeCompilerArgs.add("-Xexpect-actual-classes")
-            freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")
-            freeCompilerArgs.add("-opt-in=kotlin.time.ExperimentalTime")
+            freeCompilerArgs.add(EXPECT_ACTUAL_CLASSES)
+            freeCompilerArgs.add(OPT_IN_REQUIRES_OPT_IN)
+            freeCompilerArgs.add(OPT_IN_EXPERIMENTAL_TIME)
         }
     }
 }

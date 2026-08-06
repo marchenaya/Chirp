@@ -1,39 +1,38 @@
 import com.marchenaya.chirp.convention.ANDROID_KOTLIN_MULTIPLATFORM_LIBRARY_PLUGIN_ID
-import com.marchenaya.chirp.convention.ANDROID_MAIN_IMPLEMENTATION
-import com.marchenaya.chirp.convention.COMPOSE_COMPILER_PLUGIN_ID
 import com.marchenaya.chirp.convention.KOTLIN_MULTIPLATFORM_PLUGIN_ID
 import com.marchenaya.chirp.convention.KOTLIN_SERIALIZATION_PLUGIN_ID
-import com.marchenaya.chirp.convention.LIBRARY_COMPOSE_UI_TOOLING
-import com.marchenaya.chirp.convention.configureAndroidLibraryTarget
-import com.marchenaya.chirp.convention.configureIosTargets
+import com.marchenaya.chirp.convention.configureKotlinMultiplatform
 import com.marchenaya.chirp.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
-class CmpApplicationConventionPlugin : Plugin<Project> {
+class KmpLibraryConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
                 apply(ANDROID_KOTLIN_MULTIPLATFORM_LIBRARY_PLUGIN_ID)
                 apply(KOTLIN_MULTIPLATFORM_PLUGIN_ID)
-                apply(COMPOSE_PLUGIN_ID)
-                apply(COMPOSE_COMPILER_PLUGIN_ID)
                 apply(KOTLIN_SERIALIZATION_PLUGIN_ID)
             }
 
-            configureAndroidLibraryTarget()
-            configureIosTargets()
+            configureKotlinMultiplatform()
 
             dependencies {
-                ANDROID_MAIN_IMPLEMENTATION(libs.findLibrary(LIBRARY_COMPOSE_UI_TOOLING).get())
+                COMMON_MAIN_IMPLEMENTATION(
+                    libs.findLibrary(LIBRARY_KOTLINX_SERIALIZATION_JSON).get()
+                )
+                COMMON_TEST_IMPLEMENTATION(libs.findLibrary(LIBRARY_KOTLIN_TEST).get())
             }
         }
     }
 
     private companion object {
-        const val COMPOSE_PLUGIN_ID = "org.jetbrains.compose"
+        const val COMMON_MAIN_IMPLEMENTATION = "commonMainImplementation"
+        const val COMMON_TEST_IMPLEMENTATION = "commonTestImplementation"
+        const val LIBRARY_KOTLINX_SERIALIZATION_JSON = "kotlinx-serialization-json"
+        const val LIBRARY_KOTLIN_TEST = "kotlin-test"
     }
 
 }

@@ -1,4 +1,6 @@
 import com.marchenaya.chirp.convention.ANDROID_KOTLIN_MULTIPLATFORM_LIBRARY_PLUGIN_ID
+import com.marchenaya.chirp.convention.COMMON_MAIN_IMPLEMENTATION
+import com.marchenaya.chirp.convention.COMMON_TEST_IMPLEMENTATION
 import com.marchenaya.chirp.convention.KOTLIN_MULTIPLATFORM_PLUGIN_ID
 import com.marchenaya.chirp.convention.KOTLIN_SERIALIZATION_PLUGIN_ID
 import com.marchenaya.chirp.convention.configureKotlinMultiplatform
@@ -29,8 +31,6 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
     }
 
     private companion object {
-        const val COMMON_MAIN_IMPLEMENTATION = "commonMainImplementation"
-        const val COMMON_TEST_IMPLEMENTATION = "commonTestImplementation"
         const val LIBRARY_KOTLINX_SERIALIZATION_JSON = "kotlinx-serialization-json"
         const val LIBRARY_KOTLIN_TEST = "kotlin-test"
     }

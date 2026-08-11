@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.convention.kmp.library)
+    alias(libs.plugins.convention.cmp.feature)
     alias(libs.plugins.android.lint)
 }
 
@@ -17,7 +17,6 @@ kotlin {
                 implementation(projects.feature.auth.domain)
                 implementation(projects.core.domain)
                 implementation(projects.core.designsystem)
-                implementation(projects.core.presentation)
             }
         }
 

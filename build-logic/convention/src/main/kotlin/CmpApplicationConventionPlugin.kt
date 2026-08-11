@@ -1,6 +1,7 @@
 import com.marchenaya.chirp.convention.ANDROID_KOTLIN_MULTIPLATFORM_LIBRARY_PLUGIN_ID
 import com.marchenaya.chirp.convention.ANDROID_MAIN_IMPLEMENTATION
 import com.marchenaya.chirp.convention.COMPOSE_COMPILER_PLUGIN_ID
+import com.marchenaya.chirp.convention.COMPOSE_PLUGIN_ID
 import com.marchenaya.chirp.convention.KOTLIN_MULTIPLATFORM_PLUGIN_ID
 import com.marchenaya.chirp.convention.KOTLIN_SERIALIZATION_PLUGIN_ID
 import com.marchenaya.chirp.convention.LIBRARY_COMPOSE_UI_TOOLING
@@ -30,10 +31,6 @@ class CmpApplicationConventionPlugin : Plugin<Project> {
                 ANDROID_MAIN_IMPLEMENTATION(libs.findLibrary(LIBRARY_COMPOSE_UI_TOOLING).get())
             }
         }
-    }
-
-    private companion object {
-        const val COMPOSE_PLUGIN_ID = "org.jetbrains.compose"
     }
 
 }

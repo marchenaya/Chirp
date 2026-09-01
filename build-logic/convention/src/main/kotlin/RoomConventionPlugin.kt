@@ -24,7 +24,6 @@ class RoomConventionPlugin : Plugin<Project> {
                 KSP_ANDROID(libs.findLibrary(LIBRARY_ANDROIDX_ROOM_COMPILER).get())
                 KSP_IOS_SIMULATOR_ARM64(libs.findLibrary(LIBRARY_ANDROIDX_ROOM_COMPILER).get())
                 KSP_IOS_ARM64(libs.findLibrary(LIBRARY_ANDROIDX_ROOM_COMPILER).get())
-                KSP_IOS_X64(libs.findLibrary(LIBRARY_ANDROIDX_ROOM_COMPILER).get())
             }
         }
     }
@@ -37,7 +36,6 @@ class RoomConventionPlugin : Plugin<Project> {
         const val KSP_ANDROID = "kspAndroid"
         const val KSP_IOS_SIMULATOR_ARM64 = "kspIosSimulatorArm64"
         const val KSP_IOS_ARM64 = "kspIosArm64"
-        const val KSP_IOS_X64 = "kspIosX64"
         const val LIBRARY_ANDROIDX_ROOM_RUNTIME = "androidx-room-runtime"
         const val LIBRARY_SQLITE_BUNDLED = "sqlite-bundled"
         const val LIBRARY_ANDROIDX_ROOM_COMPILER = "androidx-room-compiler"

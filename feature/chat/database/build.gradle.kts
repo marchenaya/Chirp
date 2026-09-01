@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.convention.kmp.library)
     alias(libs.plugins.convention.room)
-    alias(libs.plugins.android.lint)
 }
 
 kotlin {
@@ -13,7 +12,6 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(libs.kotlin.stdlib)
                 // Add KMP dependencies here
             }
         }

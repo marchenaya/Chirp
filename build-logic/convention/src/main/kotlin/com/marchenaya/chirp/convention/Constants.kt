@@ -12,6 +12,7 @@ internal const val ANDROID_KOTLIN_MULTIPLATFORM_LIBRARY_PLUGIN_ID =
     "com.android.kotlin.multiplatform.library"
 internal const val KOTLIN_MULTIPLATFORM_PLUGIN_ID = "org.jetbrains.kotlin.multiplatform"
 internal const val KOTLIN_SERIALIZATION_PLUGIN_ID = "org.jetbrains.kotlin.plugin.serialization"
+internal const val ANDROID_LINT_PLUGIN_ID = "com.android.lint"
 internal const val COMPOSE_PLUGIN_ID = "org.jetbrains.compose"
 internal const val LIBRARY_COMPOSE_UI_TOOLING = "jetbrains-compose-ui-tooling"
 internal const val LIBRARY_DESUGAR_JDK_LIBS = "android-desugarJdkLibs"

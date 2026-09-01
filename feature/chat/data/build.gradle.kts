@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.convention.kmp.library)
     alias(libs.plugins.convention.buildkonfig)
-    alias(libs.plugins.android.lint)
 }
 
 kotlin {
@@ -13,8 +12,6 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(libs.kotlin.stdlib)
-
                 implementation(projects.core.domain)
                 implementation(projects.feature.chat.domain)
                 implementation(projects.feature.chat.database)

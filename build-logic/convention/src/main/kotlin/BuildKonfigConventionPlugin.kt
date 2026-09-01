@@ -10,20 +10,25 @@ class BuildKonfigConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("com.codingfeline.buildkonfig")
+                apply(BUILDKONFIG_PLUGIN_ID)
             }
 
             extensions.configure<BuildKonfigExtension> {
                 packageName.set(target.pathToPackageName())
                 defaultConfigs {
                     val apiKey = gradleLocalProperties(rootDir, rootProject.providers)
-                        .getProperty("API_KEY")
+                        .getProperty(API_KEY)
                         ?: throw IllegalStateException(
-                            "Missing API_KEY property in local.properties"
+                            "Missing $API_KEY property in local.properties"
                         )
-                    buildConfigField(FieldSpec.Type.STRING, "API_KEY", apiKey)
+                    buildConfigField(FieldSpec.Type.STRING, API_KEY, apiKey)
                 }
             }
         }
+    }
+
+    private companion object {
+        const val BUILDKONFIG_PLUGIN_ID = "com.codingfeline.buildkonfig"
+        const val API_KEY = "API_KEY"
     }
 }

@@ -22,6 +22,12 @@ class BuildKonfigConventionPlugin : Plugin<Project> {
                             "Missing $API_KEY property in local.properties"
                         )
                     buildConfigField(FieldSpec.Type.STRING, API_KEY, apiKey)
+                    val baseUrl = gradleLocalProperties(rootDir, rootProject.providers)
+                        .getProperty(BASE_URL)
+                        ?: throw IllegalStateException(
+                            "Missing $BASE_URL property in local.properties"
+                        )
+                    buildConfigField(FieldSpec.Type.STRING, BASE_URL, baseUrl)
                 }
             }
         }
@@ -30,5 +36,6 @@ class BuildKonfigConventionPlugin : Plugin<Project> {
     private companion object {
         const val BUILDKONFIG_PLUGIN_ID = "com.codingfeline.buildkonfig"
         const val API_KEY = "API_KEY"
+        const val BASE_URL = "BASE_URL"
     }
 }

@@ -12,6 +12,8 @@ kotlin {
         commonMain {
             dependencies {
                 // Add KMP dependencies here
+
+                implementation(libs.jetbrains.compose.components.resources)
             }
         }
 

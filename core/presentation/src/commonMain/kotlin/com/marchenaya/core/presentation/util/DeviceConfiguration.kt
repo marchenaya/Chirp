@@ -8,6 +8,10 @@ import androidx.window.core.layout.WindowSizeClass.Companion.HEIGHT_DP_MEDIUM_LO
 import androidx.window.core.layout.WindowSizeClass.Companion.WIDTH_DP_EXPANDED_LOWER_BOUND
 import androidx.window.core.layout.WindowSizeClass.Companion.WIDTH_DP_MEDIUM_LOWER_BOUND
 
+// Breakpoint not yet exposed as a constant by window-core 1.4.0.
+// Value taken from the official window size class reference.
+private const val WIDTH_DP_LARGE_LOWER_BOUND = 1200
+
 @Composable
 fun currentDeviceConfiguration(): DeviceConfiguration {
     val windowSizeClass = currentWindowAdaptiveInfo().windowSizeClass
@@ -25,19 +29,17 @@ enum class DeviceConfiguration {
         fun fromWindowSizeClass(windowSizeClass: WindowSizeClass): DeviceConfiguration {
             return with(windowSizeClass) {
                 when {
-                    minWidthDp < WIDTH_DP_MEDIUM_LOWER_BOUND
-                            && minHeightDp >= HEIGHT_DP_MEDIUM_LOWER_BOUND -> MOBILE_PORTRAIT
+                    minWidthDp >= WIDTH_DP_LARGE_LOWER_BOUND -> DESKTOP
 
-                    minWidthDp >= WIDTH_DP_EXPANDED_LOWER_BOUND
-                            && minHeightDp < HEIGHT_DP_MEDIUM_LOWER_BOUND -> MOBILE_LANDSCAPE
+                    (minWidthDp in WIDTH_DP_EXPANDED_LOWER_BOUND until WIDTH_DP_LARGE_LOWER_BOUND)
+                            && (minHeightDp in HEIGHT_DP_MEDIUM_LOWER_BOUND until HEIGHT_DP_EXPANDED_LOWER_BOUND) -> TABLET_LANDSCAPE
 
-                    minWidthDp in WIDTH_DP_MEDIUM_LOWER_BOUND..WIDTH_DP_EXPANDED_LOWER_BOUND
+                    (minWidthDp in WIDTH_DP_MEDIUM_LOWER_BOUND until WIDTH_DP_EXPANDED_LOWER_BOUND)
                             && minHeightDp >= HEIGHT_DP_EXPANDED_LOWER_BOUND -> TABLET_PORTRAIT
 
-                    minWidthDp >= WIDTH_DP_EXPANDED_LOWER_BOUND
-                            && minHeightDp in HEIGHT_DP_MEDIUM_LOWER_BOUND..HEIGHT_DP_EXPANDED_LOWER_BOUND -> TABLET_LANDSCAPE
+                    minHeightDp < HEIGHT_DP_MEDIUM_LOWER_BOUND -> MOBILE_LANDSCAPE
 
-                    else -> DESKTOP
+                    else -> MOBILE_PORTRAIT
                 }
             }
         }

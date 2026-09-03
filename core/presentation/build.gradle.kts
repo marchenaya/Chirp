@@ -13,6 +13,8 @@ kotlin {
             dependencies {
                 implementation(projects.core.domain)
 
+                implementation(libs.material3.adaptive)
+
                 implementation(libs.jetbrains.compose.components.resources)
             }
         }

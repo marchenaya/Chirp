@@ -8,8 +8,6 @@ import androidx.window.core.layout.WindowSizeClass.Companion.HEIGHT_DP_MEDIUM_LO
 import androidx.window.core.layout.WindowSizeClass.Companion.WIDTH_DP_EXPANDED_LOWER_BOUND
 import androidx.window.core.layout.WindowSizeClass.Companion.WIDTH_DP_MEDIUM_LOWER_BOUND
 
-// Breakpoint not yet exposed as a constant by window-core 1.4.0.
-// Value taken from the official window size class reference.
 private const val WIDTH_DP_LARGE_LOWER_BOUND = 1200
 
 @Composable

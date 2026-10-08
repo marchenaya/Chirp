@@ -22,9 +22,6 @@ class CmpLibraryConventionPlugin : Plugin<Project> {
                 COMMON_MAIN_IMPLEMENTATION(libs.findLibrary(LIBRARY_COMPOSE_UI).get())
                 COMMON_MAIN_IMPLEMENTATION(libs.findLibrary(LIBRARY_COMPOSE_FOUNDATION).get())
                 COMMON_MAIN_IMPLEMENTATION(libs.findLibrary(LIBRARY_COMPOSE_MATERIAL3).get())
-                COMMON_MAIN_IMPLEMENTATION(
-                    libs.findLibrary(LIBRARY_COMPOSE_MATERIAL_ICONS_CORE).get()
-                )
 
                 ANDROID_MAIN_IMPLEMENTATION(libs.findLibrary(LIBRARY_COMPOSE_UI_TOOLING).get())
             }
@@ -36,7 +33,6 @@ class CmpLibraryConventionPlugin : Plugin<Project> {
         const val LIBRARY_COMPOSE_UI = "jetbrains-compose-ui"
         const val LIBRARY_COMPOSE_FOUNDATION = "jetbrains-compose-foundation"
         const val LIBRARY_COMPOSE_MATERIAL3 = "jetbrains-compose-material3"
-        const val LIBRARY_COMPOSE_MATERIAL_ICONS_CORE = "jetbrains-compose-material-icons-core"
     }
 
 }

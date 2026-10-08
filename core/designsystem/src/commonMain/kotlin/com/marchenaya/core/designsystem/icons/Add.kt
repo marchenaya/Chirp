@@ -38,8 +38,8 @@ val ChirpIcons.Add: ImageVector by lazy {
     }.build()
 }
 
-@Composable
 @Preview
+@Composable
 fun AddIconPreview() {
     ChirpTheme {
         Icon(

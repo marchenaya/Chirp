@@ -35,8 +35,8 @@ val ChirpIcons.ArrowBack: ImageVector by lazy {
     }.build()
 }
 
-@Composable
 @Preview
+@Composable
 fun ArrowBackIconPreview() {
     ChirpTheme {
         Icon(

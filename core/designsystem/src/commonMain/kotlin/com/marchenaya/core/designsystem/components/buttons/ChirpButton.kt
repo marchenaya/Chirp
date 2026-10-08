@@ -139,8 +139,8 @@ fun ChirpButton(
     }
 }
 
-@Composable
 @Preview
+@Composable
 fun ChirpPrimaryButtonPreview() {
     ChirpTheme(
         darkTheme = true
@@ -153,8 +153,8 @@ fun ChirpPrimaryButtonPreview() {
     }
 }
 
-@Composable
 @Preview
+@Composable
 fun ChirpSecondaryButtonPreview() {
     ChirpTheme(
         darkTheme = true
@@ -167,8 +167,8 @@ fun ChirpSecondaryButtonPreview() {
     }
 }
 
-@Composable
 @Preview
+@Composable
 fun ChirpDestructivePrimaryButtonPreview() {
     ChirpTheme(
         darkTheme = true
@@ -181,8 +181,8 @@ fun ChirpDestructivePrimaryButtonPreview() {
     }
 }
 
-@Composable
 @Preview
+@Composable
 fun ChirpDestructiveSecondaryButtonPreview() {
     ChirpTheme(
         darkTheme = true
@@ -195,8 +195,8 @@ fun ChirpDestructiveSecondaryButtonPreview() {
     }
 }
 
-@Composable
 @Preview
+@Composable
 fun ChirpTextButtonPreview() {
     ChirpTheme(
         darkTheme = true

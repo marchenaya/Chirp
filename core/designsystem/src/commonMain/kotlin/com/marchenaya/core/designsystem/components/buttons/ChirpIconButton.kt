@@ -40,8 +40,8 @@ fun ChirpIconButton(
     }
 }
 
-@Composable
 @PreviewLightDark
+@Composable
 fun ChirpButtonPreview() {
     ChirpTheme {
         ChirpIconButton(

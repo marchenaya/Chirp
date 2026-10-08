@@ -23,8 +23,8 @@ import chirp.shared.generated.resources.compose_multiplatform
 import com.marchenaya.core.designsystem.theme.ChirpTheme
 import org.jetbrains.compose.resources.painterResource
 
-@Composable
 @Preview
+@Composable
 fun App() {
     ChirpTheme {
         var showContent by remember { mutableStateOf(false) }

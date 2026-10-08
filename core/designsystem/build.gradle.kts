@@ -14,6 +14,7 @@ kotlin {
                 // Add KMP dependencies here
 
                 implementation(libs.jetbrains.compose.components.resources)
+                implementation(libs.jetbrains.compose.ui.tooling.preview)
             }
         }
 

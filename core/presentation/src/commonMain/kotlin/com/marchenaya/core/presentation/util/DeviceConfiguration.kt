@@ -12,7 +12,9 @@ private const val WIDTH_DP_LARGE_LOWER_BOUND = 1200
 
 @Composable
 fun currentDeviceConfiguration(): DeviceConfiguration {
-    val windowSizeClass = currentWindowAdaptiveInfo().windowSizeClass
+    val windowSizeClass = currentWindowAdaptiveInfo(
+        supportLargeAndXLargeWidth = true
+    ).windowSizeClass
     return DeviceConfiguration.fromWindowSizeClass(windowSizeClass)
 }
 

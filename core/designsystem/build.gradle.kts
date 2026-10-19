@@ -12,6 +12,7 @@ kotlin {
         commonMain {
             dependencies {
                 // Add KMP dependencies here
+                implementation(projects.core.presentation)
 
                 implementation(libs.jetbrains.compose.components.resources)
                 implementation(libs.jetbrains.compose.ui.tooling.preview)

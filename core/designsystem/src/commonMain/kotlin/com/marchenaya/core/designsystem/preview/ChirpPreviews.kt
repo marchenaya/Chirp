@@ -83,3 +83,13 @@ import androidx.compose.ui.tooling.preview.Preview
     showSystemUi = true
 )
 annotation class ChirpPreviewAdaptive
+
+@Retention(AnnotationRetention.BINARY)
+@Preview(name = "Light", showBackground = true, uiMode = UI_MODE_NIGHT_NO)
+@Preview(
+    name = "Dark",
+    showBackground = true,
+    uiMode = UI_MODE_NIGHT_YES,
+    backgroundColor = 0xFF101C28
+)
+annotation class PreviewChirpLightDark

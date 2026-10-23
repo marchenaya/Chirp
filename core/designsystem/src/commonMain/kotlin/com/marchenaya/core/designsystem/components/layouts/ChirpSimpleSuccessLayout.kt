@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.marchenaya.core.designsystem.components.brand.ChirpSuccessIcon
 import com.marchenaya.core.designsystem.components.buttons.ChirpButton
 import com.marchenaya.core.designsystem.components.buttons.ChirpButtonStyle
-import com.marchenaya.core.designsystem.preview.PreviewChirpLightDark
+import com.marchenaya.core.designsystem.preview.ChirpPreviewLightDark
 import com.marchenaya.core.designsystem.theme.ChirpTheme
 import com.marchenaya.core.designsystem.theme.extended
 
@@ -64,7 +64,7 @@ fun ChirpSimpleSuccessLayout(
     }
 }
 
-@PreviewChirpLightDark
+@ChirpPreviewLightDark
 @Composable
 private fun ChirpSimpleSuccessLayoutPreview() {
     ChirpTheme {

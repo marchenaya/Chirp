@@ -14,6 +14,9 @@ kotlin {
                 implementation(projects.feature.auth.domain)
                 implementation(projects.core.domain)
                 implementation(projects.core.designsystem)
+
+                implementation(libs.jetbrains.compose.components.resources)
+                implementation(libs.jetbrains.compose.ui.tooling.preview)
             }
         }
 

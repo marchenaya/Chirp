@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -18,6 +19,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.marchenaya.core.designsystem.preview.ChirpPreviewLightDark
+import com.marchenaya.core.designsystem.theme.ChirpTheme
 import com.marchenaya.core.designsystem.theme.extended
 
 @Composable
@@ -87,6 +90,25 @@ fun ChirpTextFieldLayout(
                     MaterialTheme.colorScheme.extended.textTertiary
                 },
                 style = MaterialTheme.typography.bodySmall
+            )
+        }
+    }
+}
+
+@ChirpPreviewLightDark
+@Composable
+private fun ChirpTextFieldLayoutPreview() {
+    ChirpTheme {
+        ChirpTextFieldLayout(
+            title = "Title",
+            supportingText = "Supporting text",
+            onFocusChanged = {},
+            modifier = Modifier.width(300.dp)
+        ) { modifier, _ ->
+            Text(
+                text = "Text field content",
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = modifier
             )
         }
     }

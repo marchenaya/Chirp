@@ -26,7 +26,7 @@ suspend inline fun <reified Request, reified Response : Any> HttpClient.post(
     route: String,
     queryParams: Map<String, Any> = mapOf(),
     body: Request,
-    crossinline builder: HttpRequestBuilder.() -> Unit
+    crossinline builder: HttpRequestBuilder.() -> Unit = {}
 ): Result<Response, DataError.Remote> {
     return safeCall {
         post {
